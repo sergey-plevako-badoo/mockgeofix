@@ -219,6 +219,7 @@ public class MainActivity extends ActionBarActivity implements SharedPreferences
     protected synchronized void updateStartStopButton() {
         if (mService==null) {return;}
         mStartStopButton.setEnabled(true);
+        mService.start();
         boolean running = mService.isRunning();
         if (running) {
             mStartStopButton.setText(getString(R.string.stop));
